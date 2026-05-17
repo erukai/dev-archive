@@ -1,18 +1,18 @@
 #from: commit 01
 
 import math #using a built-in python module
-import python_module #using a simple python file as a module
+import module #using a simple python file as a module
 import numpy as np #using a 3rd party python package
 import matplotlib.pyplot as plt #using a 3rd party python library
 
 #using a variable from a module
-number = python_module.num #return 25
+number = module.num #return 25
 
 #using a function from a module
-name = python_module.get_name() #return "Eruka"
+name = module.get_name() #return "Eruka"
 
 #using a class from a module
-car = python_module.Car(brand="Volvo", color="red") #create a Car object with properties: {brand="Volvo", color="red"}
+car = module.Car(brand="Volvo", color="red") #create a Car object with properties: {brand="Volvo", color="red"}
 car.drive() #return "This red car is made by Volvo."
 
 #------------------------

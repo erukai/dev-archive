@@ -1,13 +1,14 @@
 > _from: commit 01_
-_(all examples can be found in the files in this directory.`)_
+
+_(all examples can be found in the files in this directory.)_
 
 ---
 
-requirements.txt
+`requirements.txt`
 - a file used to install listed python dependencies
 - can be run with `pip install -r requirements.txt` in the terminal
 
-pip
+`pip`
 - the standard package installer for python
 - used to install, uninstall, and manage packages for python
 - example: `pip install numpy`

@@ -44,29 +44,10 @@
 - full command is `git push [remote] [branch]`
 - if remote and branch are not given, remote `origin` and branch `main` / `master` (or whatever the default branch was set to)
 
+---
 
 > _learned: 16/5/2026_
 
 `git fetch`
 - make a local copy of a remote repository to the connected local repository BUT NOT working directory
 - used to view the changes that other developers have made to the remote repository before copying it to the working directory
-
----
-
-remote 
-- "remote" refers to the remote repository that a local repository is connected to
-- a remote is given an alias by a local repository during `git init` or `git clone`
-- the default alias is `origin`
-- an alias is given to a remote repository to differentiate it with other remote repositories that a local repository may be connected to _(yes that is valid; a local repo can connect to more than one remote)_
-
-branch
-
-fork
-
-merge
-
-rebase
-
-upstream
-
-tag
