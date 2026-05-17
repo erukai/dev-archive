@@ -1,8 +1,12 @@
 #from: commit 01
 
-# A snapshot of `userprofile.py` from another project
-# Some lines have been turned into a string due to their reliance on `saveload.py`; a python module that is not in this project
-# They are turned into a double-quote string (and marked with `--` at the end of the line) to prevent warnings from VS Code
+'''
+A snapshot of `userprofile.py` from another project
+Some lines have been turned into a string due to their reliance on `saveload.py`; a python module that is not in this project
+They are turned into a double-quote string (and marked with `--` at the end of the line) to prevent warnings from VS Code
+'''
+
+#---
 
 import discord #imports the library `discord`
 from discord.ext import commands #imports the module `commands` which is from the subpackage `ext` of the package/library `discord`
@@ -71,6 +75,7 @@ class UserStats(commands.Cog):
 
         await ctx.send(embed=embed)
 
-#Use this to connect the bot to the commands inside the classes in this file
+
+#Use this to connect the Discord bot to the commands inside the classes in this file
 async def setup(bot):
-    await bot.add_cog(UserStats(bot))
+    await bot.add_cog(UserStats(bot)) #the `add_cog` methods binds the cog to the bot
