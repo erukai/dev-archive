@@ -1,32 +1,33 @@
-#from: commit 01
+#committed: 27/11/2025
 #---
 
 import math #using a built-in python module
-import module #using a simple python file as a module
-import numpy as np #using a 3rd party python package
-import matplotlib.pyplot as plt #using a 3rd party python library
+from my_package import my_module #using a module inside a local python package
+
+import numpy as np #using a 3rd party python package (library)
+import matplotlib.pyplot as plt #using a 3rd party python package (library)
 
 #using a variable from a module
-number = module.num #return 25
+number = my_module.num #return 25
 
 #using a function from a module
-name = module.get_name() #return "Eruka"
+name = my_module.get_name() #return "Eruka"
 
 #using a class from a module
-car = module.Car(brand="Volvo", color="red") #create a Car object with properties: {brand="Volvo", color="red"}
+car = my_module.Car(brand="Volvo", color="red") #create a Car object with properties: {brand="Volvo", color="red"}
 car.drive() #return "This red car is made by Volvo."
 
 #------------------------
 
-#math (module)
+#math (module) > sqrt() (function)
 sqrt_num = math.sqrt(number) #return 5
 
-#numpy (package)
+#numpy (package) > array() (function)
 np_array = np.array([1, 2, 3]) #return a NDArray object
 
 #------------------------
 
-#matplotlib (library) -> pyplot (module)
+#matplotlib (package) > pyplot (module)
 
 x = [1, 2, 3, 4]
 y = [1, 4, 9, 16]

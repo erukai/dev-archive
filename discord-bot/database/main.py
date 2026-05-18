@@ -1,7 +1,18 @@
-#from: commit 01
+#committed: 27/11/2025
+#---
 
 import json
 import os
+from pathlib import Path #import the `Path` class from the `pathlib` library
+
+#creating path using [`join()` function of the `path module` from the `os` package] so that it won't break when on other operating systems
+path = os.path.join("discord-bot", "database", "password.json")
+
+# Build a path relative to the script (this file) using the Path class
+path = Path(__file__).parent / "password.json"
+
+#NOTE: `os.path.join()` is an old method, and nowadays it is better to use `pathlib.Path()` due to its object-oriented approach (it returns a Path object instead of a literal string)
+#---
 
 my_dict = {
     "user1": {
@@ -9,9 +20,6 @@ my_dict = {
         "password": "abc123"
     }
 }
-
-#creating path using `os.join` so that it won't break when on other operating systems
-path = os.path.join("discord-bot", "database", "password.json")
 
 #writing data to a json file
 with open(path, "w") as f: # "w" means "write"

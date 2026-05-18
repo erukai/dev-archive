@@ -1,4 +1,4 @@
-> _from: commit 01_
+> _committed: 27/11/2025_
 
 ---
 
@@ -26,6 +26,7 @@
 - make a local copy of a remote repository to the connected local repository and working directory
 - will throw an error if the command is used outside of a local repository *(i.e. a directory without a `.git` folder)*
 - to make a local copy of a remote repository to the working directory for the first time, use `git clone` instead
+- `git pull` is essentially a combination of `git fetch` and `git merge`
 
 ---
 

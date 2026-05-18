@@ -1,4 +1,4 @@
-#from: commit 01
+#committed: 27/11/2025
 
 '''
 A snapshot of `userprofile.py` from another project

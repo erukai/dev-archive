@@ -1,4 +1,4 @@
-> _from: commit 01_
+> _committed: 27/11/2025_
 
 _(all examples can be found in the files in this directory.)_
 
@@ -33,5 +33,7 @@ package
 
 library
 - a collection of modules and packages
-- sometimes used with package interchangeably
+- it technically IS a package, but a library is specifically for reuse and distribution
+- and by "distribution", it means whatever 3rd party dependencies you install using a package installer like `pip`
+- to demonstrate, you can make your own package by simply making a folder containing modules and a `__init__.py` file. But if the package is only for your project to use and not to be distributed to the internet, then it remains a package, not a library 
 - an example of a Python library is `Matplotlib`
