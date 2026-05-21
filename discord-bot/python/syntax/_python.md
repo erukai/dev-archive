@@ -4,6 +4,16 @@ _(all examples can be found in the files in this directory.)_
 
 ---
 
-guard
+### Built-in Methods
 
-reference vs copy
+`any()`
+
+`all()`
+
+`len()`
+
+---
+
+> _learned: 21/5/2025_
+
+`map()`
