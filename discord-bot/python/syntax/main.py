@@ -103,38 +103,6 @@ for x in numbers:
 
 #---
 
-#DATA TYPES
-
-#numeric
-num = 3 #int
-pi = 3.14 #float
-z2 = 3 + 4j #complex
-
-#sequence
-hello = "Hello World!" #str
-fruits = ["apple", "banana", "grape"] #list
-languages = ("english", "japanese", "arabic") #tuple
-for i in range(3): pass #range
-
-#set
-random_numbers = {1, 20, 56, 760, 5, 3} #set
-countries = frozenset(["United Kingdom", "China", "Japan"])
-
-#mapping
-user = {
-    "username" : "john_doe",
-    "password" : "abc123"
-} #dict
-
-bot = True #bool
-age = None #NoneType
-
-#---
-
 #iteration
 for char in "Hello World!":
     print(char) #will go through (iterate) every single character in the string, and print the letter in the current iteration
-
-#---
-
-#lambda

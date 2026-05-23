@@ -4,20 +4,6 @@ _(all examples can be found in the files in this directory.)_
 
 ---
 
-_(If I'm not that lazy, I could try to explain even the basic syntax. But teaching something so basic is mentally tiring for me, so I'll just cover the things that I find or used to find challenging.)_
-
-conditional
-- controls the flow of a program by executing specific blocks of code only when certain conditions are met
-- there are two main sets of conditional keywords:
-    - `if-elif-else`
-    - `match-case`
-- examples are shown in `main.py` in this directory
-
-comprehension
-- a short, one-line syntax used to create new collections _(e.g. lists, dictionaries, sets)_ from existing iterables
-- `[{expression} for {item} in {iterable} if {condition}]`
-- the `condition` is optional; you can have a simple `[{expression} for {item} in {iterable}]` comprehension
-
 data type
 - Python data types are divided into multiple categories:
     - Numeric _(number value)_: `int`, `float`, `complex`
@@ -36,7 +22,7 @@ sequence
     - `str`: `"Hello World!"` _(an ordered and immutable collection of `H`, `e`, `l`, `l`, `o`, ` `, `W`, `o`, `r`, `l`, `d`, `!`)_
     - `list`: `["Hello", 5, True]` _(an ordered and mutable collection of `"Hello"` [`str`], `5` [`int`], `True` [`bool`])_
     - `tuple`: `(True, False, None)` _(and ordered an immutable collection of `True`, [`bool`] `False` [`bool`], `None` [`NoneType`])_
-    - `range`: `for i in range(3)` _(an ordered and immutable range of numbers)_
+    - `range`: `range(0, 3)` _(an ordered and immutable range of numbers)_
 - "ordered" means the sequence of items inside the collection is preserved, and can be accessed by the item's index number (starting with `0`)
 - "mutable" means the collection can be changed, such as adding _(`.append()`)_ and removing items _(`.pop()`)_
 - besides `range`, you can declare empty sequences like `x = ""`, `y = []` and `z = ()`
@@ -51,10 +37,10 @@ set
 - example:
     - `set`: `{15, 68, 50}` or `set([15, 68, 50])`
     - `frozenset`: `frozenset([13, 256, 89])`
-- a `set` can be declared by surrounding items with curly brackets (`{}`)  or using the `set()` method on an existing collection
-- to create an empty set however, you must use the `set()` method without imputing any value
+- a `set` can be declared by surrounding items with curly brackets (`{}`)  or using the `set()` function on an existing collection
+- to create an empty set however, you must use the `set()` function without imputing any value
 - you cannot create an empty set by declaring an empty curly bracket `{}` because that is reserved for an empty dictionary _(type({}) would return `<class 'dict'>`)_
-- `frozenset` on the other hand can only be declared using the `frozenset()` method on an existing collection
+- `frozenset` on the other hand can only be declared using the `frozenset()` function on an existing collection
 
 mapping
 - an object that stores items in key-value pairs _(`{key : value}`)_
@@ -86,13 +72,3 @@ boolean
         - any empty list, tuple, set and dictionary _(e.g. `[]`, `()`, `{}`)_
         - the NoneType value `None`
         - the boolean `False` itself
-
-iterable
-- an object that can be iterated; i.e. collections (sequence, set, mapping)
-
-
----
-
-> _learned: 21/5/2025_
-
-lambda
