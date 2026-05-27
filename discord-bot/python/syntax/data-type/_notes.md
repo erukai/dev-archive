@@ -69,6 +69,6 @@ boolean
     - elaborately, falsy expressions are:
         - the number `0` _(NOT including fractions and decimals)_ (e.g. `0`, `0.0`)
         - an empty string _(e.g. `""`)_
-        - any empty list, tuple, set and dictionary _(e.g. `[]`, `()`, `{}`)_
+        - any empty list, tuple, set and dictionary _(e.g. `[]`, `()`, `set()`, `{}`)_
         - the NoneType value `None`
         - the boolean `False` itself
