@@ -4,8 +4,11 @@
 import random
 
 class Player: #class
+    # Shared class attribute for all instances
+    entity_type = "Player"
 
     def __init__(self): #constructor. everything inside this function will automatically be inherited by the object created
+        # Instance attributes specific to each object
         self.hp = 10
         self.atk = 10
 

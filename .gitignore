@@ -1,6 +1,8 @@
 #Example of a .gitignore template for Python
 #`.env` and `venv/` have been removed from the list to intentionally include them in version control
 
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

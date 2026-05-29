@@ -18,15 +18,15 @@ _(all examples can be found in the files in this directory.)_
 - this function expects a collection _(like sqeuences, sets, dictionaries)_ or any object with the method `__len__`
 
 `type({object})`
-- returns the type of an object
+- returns the type of an object _(an object's "type" is the object's class)_
 
 `isinstance({object}, {class})` -> `bool`
 - returns `True` if the specified object is an instance of a specific class _(meaning, if an object was created from a particular class)_
 - for example, `isinstance("hello", str)` checks whether the object `"hello"` is from the `str` class. And since we know it's true, the function will return `True`
-- `isinstance(56, dict)`, on the other hand, checks whether the object `560=` is from the `dict` class. However, `56` is not from the `dict` class, but rather from `int`. So the function will return `False`
+- `isinstance(56, dict)`, as another example, checks whether the object `560` is from the `dict` class. However, `56` is not from the `dict` class, but rather from `int`. So the function will return `False`
 
 ---
 
 > _learned: 21/5/2026_
 
-`map()`
+`map({function}, {iterable})`
