@@ -4,19 +4,19 @@ _(all examples can be found in the files in this directory.)_
 
 ---
 
-database
+**database**
 - an organized digital location to store data
 - data can be stored in a structured or unstructured way
 - a database is managed by a system called **"Database Management System"** *(DBMS)*
 - two common database categories are Relational (SQL) and Non-Relational (NoSQL)
 
-Relational Database (SQL)
+**Relational Database (SQL)**
 - data is structured
 - data is stored in a table with rows and columns
 - tables are linked using predefined relationships (primary and foreign keys)
 - examples: `MySQL`, `PostgreSQL`, `Oracle`
 
-Non-Relational Database (NoSQL)
+**Non-Relational Database (NoSQL)**
 - data is _not really_ "unstructured", bur rather _"flexible"_
 - data is stored using models like key-value pairs, JSON-like documents or graphs
 - examples: `MongoDB`, `Redis`, `Cassandra`

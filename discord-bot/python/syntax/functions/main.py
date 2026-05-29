@@ -10,15 +10,15 @@ def introduction(name, age, city, occupation):
     print(f"Hello! I am {name} and I am {age} years old. I live in {city} as a {occupation}.")
 
 #calling a function using positional arguments (args)
-introduction("John", 23, "Texas", "teacher")
+introduction("John", 23, "Tokyo", "teacher")
 
 #calling a function using keyword arguments (kwargs)
-introduction(age=23, occupation="teacher", city="Texas", name="John")
+introduction(age=23, occupation="teacher", city="Tokyo", name="John")
 
 #calling a function with keyword & positional arguments (kwargs args)
 #positional arguments must come BEFORE all keyword arguments; not in between, and not after
 #Order: args, kwargs
-introduction("John", 23, occupation="teacher", city="Texas")
+introduction("John", 23, occupation="teacher", city="Tokyo")
 
 #---
 
@@ -48,7 +48,6 @@ def greet_all(name, *friends, married:bool=False, **spouse_info):
     print(phrase_name, phrase_hobbies, phrase_married, phrase_spouse)
 
 greet_all("John", "Jane", "Evelyn", "Brad", married=True, sp_name="Tulip", age=23)
-
 
 #---
 

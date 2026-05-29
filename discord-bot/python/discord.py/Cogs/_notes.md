@@ -5,7 +5,7 @@ _(example of a main bot file can be found in the `bot` folder in the parent dire
 
 ---
 
-Cogs
+**Cogs**
 - a modular class that lets you organize your bot's commands, event listeners, and state into separate, reusable components
 - your bot's commands become the methods of the Cog class
 - to make a Cog class, make a class with inheritance from `commands.Cog`

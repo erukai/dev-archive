@@ -4,7 +4,7 @@ _(all examples can be found in the files in this directory.)_
 
 ---
 
-data type
+**data type**
 - Python data types are divided into multiple categories:
     - Numeric _(number value)_: `int`, `float`, `complex`
     - Sequence _(ordered collection of items)_: `str`, `list`, `tuple`, `range`
@@ -15,7 +15,7 @@ data type
     - Binary _(binary value)_: `bytes`, `bytearray`, `memoryview`
 - you can access the data type of an object using `type(object)`
 
-sequence
+**sequence**
 - a sequence is a collection of ordered items
 - a string (text) is considered a sequence, because it is a collection of ordered characters and symbols
 - examples:
@@ -28,7 +28,7 @@ sequence
 - besides `range`, you can declare empty sequences like `x = ""`, `y = []` and `z = ()`
 - Special note: if a tuple has only one item, the tuple must end with a comma (`,`), as in `z = ("apple",)` so that Python does not mistake the tuple for a parenthesized expression like in logic (`if ("male" or "female") and >= 18:`) or math (`2 * (3 + 4)`)
 
-set
+**set**
 - set is not a sequence since it is unordered _(items don't have indexes, and therefore cannot be accessed by index number)_
 - meaning you must access the item by name, or convert it into a sequence like `list` or `tuple`
 - however, it is still a collection of items, and therefore is an iterable
@@ -42,7 +42,7 @@ set
 - you cannot create an empty set by declaring an empty curly bracket `{}` because that is reserved for an empty dictionary _(type({}) would return `<class 'dict'>`)_
 - `frozenset` on the other hand can only be declared using the `frozenset()` function on an existing collection
 
-mapping
+**mapping**
 - an object that stores items in key-value pairs _(`{key : value}`)_
 - a mapping data type is **unordered**, and each key are unique
 - unlike a set where Python will automatically remove the duplicated items, for a mapping data type like `dict`, the last key will **overwrite** the previous key with the same name
@@ -52,8 +52,9 @@ mapping
 - keys in a mapping type act like indexes
 - to access the value of a key of a mapping type, you can write the key name where you would write the index number of sequence item
 - example: `value = dict_name['key_name']` _(`apple = food['fruits']`)_ as opposed to `value = sequence[index]` _(`apple = fruits[0] `)_
+- **IMPORTANT**: the `mapping` data type is not the same as the `map()` function. Although the name is similar, the usage is unrelated
 
-boolean
+**boolean**
 - a boolean is a data that represents `true` or `false`
 - `true` or `false`, `yes` or `no`, `1` or `0`
 - these two simple yet contradictory values are one of the most vital aspects of programming and logic
