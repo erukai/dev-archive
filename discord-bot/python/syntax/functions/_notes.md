@@ -75,26 +75,94 @@ z = addition(2, 3)
         func(name="John", city="Tokyo")
         ```
     - variable positional parameters _(*args)_
-        - 
+        - when you want a positional parameter to receive more than 1 argument
+        - a variable positional parameter is marked with an asterisk _(`*`)_ before the parameter name _(hence why it's called `*args`)_
+        - the `*args` parameter packs the "excess" arguments into a single **tuple** _(`(arg1, arg2, arg3)`)_
+        - there can only be 1 `*args` parameter in a function, and it must be placed as the last positional parameter
+        - example:
+        ```python
+        def func(name, *friends): #`name` takes the first argument of the function call, while `*friends` takes the rest
+            print(name) #output: "John"
+            print(friends) #output: ("Diana", "Mark", "Edison")
+
+        func("John", "Diana", "Mark", "Edison")
+        ```
+        - even if the `*args` parameter receives 1 argument, it will still pack into a tuple _(e.g. `friends = ("Diana",)`)_
     - variable keyword parameters _(**kwargs)_
+        - when you want a keyword parameter to receive more than 1 argument
+        - a variable keyword parameter is marked with two asterisks _(`**`)_ before the parameter name _(hence why it's called `**kwargs`)_
+        - the `**kwargs` parameter packs the "excess" arguments into a single **dictionary** _(`{key1=val1, key2=val2, key3=val3}`)_
+        - there can only be 1 `*kwargs` parameter in a function, and it must be placed as the last keyword parameter
+        - example:
+        ```python
+        def func(name, **friend_data): #`name` takes the first argument of the function call, while `**friend_data` takes the rest of the keyword arguments
+            print(name) #output: "John"
+            print(friend_data) #output: {"name": "Diana", "age": 24, "city": "Paris"}
 
-- the above are the categories of parameters. In practice, a normal function can take all positional, keyword, `*args` and *`*kwargs` parameters
-- But if you deliberately set a function to be positional-only, then only positional parameters can be used
-- Likewise, if you deliberately set a function to be keyword-only, then only keyword and `*kwargs` parameters can be used
-- Notice how I didn't mention `*args` two points above? That's because, if you set a function to be positional-only _(`func(..., /)`)_, you cannot have variable positional parameters _(`*args`)_. A `**kwargs` parameter packs the excess arguments into a dictionary, but a `**args` parameter packs the excess arguments into a tuple.... ?
+        func("John", name="Diana", age=24, city="Paris")
+        ```
+        - even if the `*kwargs` parameter receives 1 argument, it will still pack into a dictionary _(e.g. `friend_data = {"name":"Diana"}`)_
 
-argument: args, kwargs, *args, **kwargs
+- the above are the categories of parameters. In practice, a function can take all positional, keyword, `*args` and *`*kwargs` parameters
+- But if you deliberately set a function to be positional-only (adding `/`), then only positional and `*args` parameters can be used
+- Likewise, if you deliberately set a function to be keyword-only (adding `*`), then only keyword and `**kwargs` parameters can be used
+
+
+**argument**
 - an argument is the value you pass into a function's parameter
 - if you give less arguments than the number of required parameters, a `TypeError: missing x required positional arguments` error will be raised
+    - an exception is if the "excess" **parameters** have a **default value** _(e.g. `def func(param=default_val)`)_
 - if you give more arguments than the number of parameters, a `TypeError: take x arguments but y were given` error will be raised
+    - an exception is if the "excess" **arguments** are passed into a **variable parameter** _(`*args` or `**kwargs`)_
 - there are 2 categories of arguments:
     - positional arguments
-        - 
+        - passed to a function by following the position of the function's parameters
+        - example:
+        ```python
+        def func(name, age, city): #index 0: name, index 1: age, index 3: city
+            pass
+
+        func("John", 23, "Tokyo") #index 0: "John", index 1: 23, index 3: "Tokyo"
+
+        #hence, name: "John", age: 23, city: "Tokyo"
+        ```
+        - will raise an error if less / more arguments are received
     - keyword arguments
+        - passed to a function by using the parameter name as the "key" with the argument as the "value"
+        - keyword arguments do not need to care about the position
+        - example:
+        ```python
+        def func(name, age, city):
+            pass
+
+        func(city="Tokyo" name="John", age=23)
+        ```
+        - will raise an error if keyword _(parameter name)_ does not exist
+
+
+**default argument**
+- a fallback value assigned to a function parameter when created
+- a parameter with a default argument will not raise an error if it does not receive an argument when the function is called
+- syntax is: `def func(param=default_value)`
+- example _(no argument)_:
+```python
+def func(string="Hello World!"):
+    print(string)
+
+func() #output: "Hello World!"
+```
+- however, if an argument is provided during a function call, that argument will be used
+- example _(with argument)_:
+```python
+def func(string="Hello World!"):
+    print(string)
+
+func("My name is John.") #output: "My name is John."
+```
 
 
 **type hint**
-- type hints are a kind of annotations (like comments) where the function tells you the expected type(s) of a variable, a function argument, or a a return value
+- type hints are a kind of annotations _(like comments)_ where the function tells you the expected type(s) of a variable, a function argument, or a return value
 - syntax:
     - variable: `myNum : int = 23` _(expects the variable `myNum` to be of type `int`)_
     - function argument: `def myFunc(num : int)` _(expects the argument of the parameter `myNum` to be of type `int`)_
