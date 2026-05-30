@@ -175,6 +175,29 @@ func("My name is John.") #output: "My name is John."
 > _learned: 21/5/2026_
 
 **lambda**
+- a keyword used to create a single-expression anonymous function _(meaning the function is defined without a name)_
+- it is primarily used to create a quick, one-time use function that only has one expression
+- a lambda expression creates a function object
+- a lot of the times you would use a lambda expression directly inside another method or function call _(that accepts a function object)_
+- for example:
+```python
+numbers = [1, 2, 3, 4, 5, 6]
+
+# Keep only even numbers
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+
+print(even_numbers)  # Output: [2, 4, 6]
+```
+- if you don't want to use the lambda expression immediately, you can store it in a variable. It's no different than storing a regular function in a variable, since both functions create a function object
+```python
+square_var = lambda x: x ** 2
+```
+... is the same as:
+```python
+def square_func(x):
+    return x ** 2
+```
+- both `square_var` and `square_func` creates a function object
 
 **decorator**
 
