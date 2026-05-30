@@ -5,24 +5,57 @@
 def hello():
     print("Hello!")
 
+#---
+
 #function with parameters
 def introduction(name, age, city, occupation):
     print(f"Hello! I am {name} and I am {age} years old. I live in {city} as a {occupation}.")
 
-#calling a function using positional arguments (args)
-introduction("John", 23, "Tokyo", "teacher")
+#function with positional-only parameters
+def intro_pos(name, age, city, occupation, /): #`/` marks the parameters BEFORE it as positional-only. Requires at least 1 parameter before jt.
+    print(f"Hello! I am {name} and I am {age} years old. I live in {city} as a {occupation}.")
 
-#calling a function using keyword arguments (kwargs)
-introduction(age=23, occupation="teacher", city="Tokyo", name="John")
+#function with keyword-only parameters
+def intro_kw(*, name, age, city, occupation): #`*` marks the parameters AFTER it as keyword-only. Requires at least 1 parameter after jt.
+    print(f"Hello! I am {name} and I am {age} years old. I live in {city} as a {occupation}.")
 
-#calling a function with keyword & positional arguments (kwargs args)
-#positional arguments must come BEFORE all keyword arguments; not in between, and not after
-#Order: args, kwargs
-introduction("John", 23, occupation="teacher", city="Tokyo")
+#function with parameters that are positional-only, keyword-only, and standard
+def intro_pos_kw(name, age, /, city, *, occupation):
+    print(f"Hello! I am {name} and I am {age} years old. I live in {city} as a {occupation}.")
+
+#explanation for intro_pos_kw:
+#`/` looks at the parameters BEFORE it, which are `name` and `age`. Therefore, `name` and `age` only accept positional arguments.
+#`*` looks at the parameters AFTER it, which is `occupation`. Therefore, `occupation` only accepts keyword arguments.
+#the `city` parameter lies in between `/` and `*`, where neither markers look at its direction. Therefore, `city` can accept both positional and keyword arguments.
 
 #---
 
-#function with *args parameter (* = a "catch all" or "everything" widlcard)
+#calling a function using positional arguments (args)
+intro_pos("John", 23, "Tokyo", "teacher")
+
+#calling a function using keyword arguments (kwargs)
+intro_kw(age=23, occupation="teacher", city="Tokyo", name="John")
+
+#---
+
+#calling a function with positional & keyword arguments (*args, **kwargs)
+
+#positional arguments must come BEFORE all keyword arguments; not in between, and not after
+#Order: args, kwargs
+
+#example where `city` is passed as a KEYWORD argument.
+#in this example, both `city` and `occupation` are keyword arguments.
+#therefore, order/position for those two parameters do not matter
+intro_pos_kw("John", 23, occupation="teacher", city="Tokyo")
+
+#example where `city` is passed as a POSITIONAL argument.
+#in this example, `name`, `age` and `city` are positional arguments.
+#therefore, order/position for those three parameters matter
+intro_pos_kw("John", 23, "Tokyo", occupation="teacher")
+
+#---
+
+#function with *args parameter (* = a "catch all" or "everything" wildcard)
 def greet_args(greet, *names):
   for name in names:
     print(greet, name)
